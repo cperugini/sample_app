@@ -5,14 +5,18 @@ gem 'rails', '3.2.13'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+group :development, :test do
+  gem 'rspec-rails', '2.10.0'
+  gem 'guard-rspec', '0.5.5'
+  gem 'sqlite3'
+end
+
 group :production do
   gem 'pg'
 end
 group :development, :test do
   gem 'sqlite3'
-  gem 'rspec-rails'
 end
-
 
 
 # Gems used only for assets and not required
@@ -31,8 +35,14 @@ gem 'jquery-rails'
 
 gem 'rb-readline'
 
+# Test gems on Windows
 group :test do
   gem 'capybara', '1.1.2'
+  gem 'rb-fchange', '0.0.5'
+  gem 'rb-notifu', '0.0.4'
+  gem 'win32console', '1.3.0'
+  gem 'guard-spork', '0.3.2'
+  gem 'spork', '0.9.0'
 end
 
 # To use ActiveModel has_secure_password
